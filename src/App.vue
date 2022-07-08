@@ -38,7 +38,7 @@ import { onMounted, provide, reactive, ref, toRaw, toRefs, watch } from "vue"
 import gButtonGroup from "./components/Button/ButtonGroup.vue"
 import gButton from 'components/Button/Button.vue'
 import gInput from 'components/Input/Input.vue'
-import testBar from 'components/testBar.vue'
+
 
 
 export default {
@@ -47,7 +47,7 @@ export default {
     gButton,
     gButtonGroup,
     gInput,
-    testBar,
+  
 
   },
   setup() {
