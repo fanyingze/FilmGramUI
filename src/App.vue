@@ -1,22 +1,21 @@
 
 
 <template>
-
-
-
   <div class="showdiv">
+    <h2>按钮</h2>
     <gButton icon="setting" icon-position="left" :openLoading='true'>一个按钮</gButton>
     <gButton icon="setting" icon-position="right" :openLoading='true'>一个按钮</gButton>
     <gButton>一个按钮</gButton>
   </div>
   <div class="showdiv">
+    <h2>按钮组</h2>
     <gButtonGroup>
       <gButton icon="arrow-left">一个按钮</gButton>
       <gButton icon="arrow-right" icon-position="right">一个按钮</gButton>
     </gButtonGroup>
   </div>
   <div class="showdiv">
-    {{ val }}
+    <h2>输入框</h2>
     <gInput placeholder="请输入内容"></gInput>
     <gInput placeholder="请输入内容" type="textarea"></gInput>
     <gInput placeholder="请输入内容" icon="setting" size="small"></gInput>
@@ -27,13 +26,18 @@
 
   </div>
 
+  <div class="showdiv">
+    <h2>布局</h2>
+    
+  </div>
+
 </template>
 
 <script lang="ts">
 import { onMounted, provide, reactive, ref, toRaw, toRefs, watch } from "vue"
-import gButtonGroup from "./components/ButtonGroup.vue"
-import gButton from 'components/Button.vue'
-import gInput from 'components/Input.vue'
+import gButtonGroup from "./components/Button/ButtonGroup.vue"
+import gButton from 'components/Button/Button.vue'
+import gInput from 'components/Input/Input.vue'
 import testBar from 'components/testBar.vue'
 
 
