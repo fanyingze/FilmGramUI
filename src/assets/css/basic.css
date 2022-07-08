@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* 全局 */
+  --font-size: 14px;
+  --font-large-size:18px;
+  --font-small-size:12px;
+  --border-radius: 4px;
+  --color: #333;
+  --border-color: #bbb;
+  --border-color-hover: #999;
+  --font-color-active: #555;
+  /* icon */
+  --icon-color:#666;
+  --icon-large-size:18px;
+  /* button区域 */
+  --button-bg: white;
+  --button-active-bg: #eee;
+  --button-height: 32px;
+  /* input区域 */
+  --input-height:32px;
+  --input-small-height:26px;
+  --input-large-height:40px;
+  --input-disabled-background:#EEE
+
+}
+
+#app {
+  margin: 20px;
+}
+
+body {
+  font-size: var(--font-size);
+}

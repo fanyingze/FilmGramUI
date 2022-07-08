@@ -1,2 +1,136 @@
-# FilmGramUI
-一个轻量级的UI库
+# Filmgram-UI 一个轻量级的UI库
+
+
+
+
+## 一.安装使用
+
+#### 1.使用npm对包进行安装
+
+```
+npm install filmgram-ui
+```
+
+
+
+#### 2.在根组件中加入样式
+
+```css
+@import '../assets/basic.css';
+:root {
+  --button-height: 32px;
+  --font-size: 14px;
+  --button-bg: white;
+  --button-active-bg: #eee;
+  --border-radius: 4px;
+  --color: #333;
+  --border-color: #bbb;
+  --border-color-hover: #999;
+  --font-color-active: #555
+}
+```
+
+
+
+#### 3.导入样式
+
+```typescript
+import {Button,Icon,ButtonGroup} from 'filmgram-ui'
+import 'filmgram-ui/dist/style.css'
+```
+
+
+
+#### 4.注册样式并使用
+
+
+
+## 二、使用指南
+
+#### 1.按钮样式
+
+##### 	
+
+##### 	按钮
+
+<img src="https://s3.bmp.ovh/imgs/2022/07/08/ae423753497c5d42.png" style="zoom:50%;" />
+
+```html
+<gButton icon="setting" icon-position="left" openLoading='true'>一个按钮</gButton>
+<gButton icon="setting" icon-position="right" openLoading='true'>一个按钮</gButton>
+<gButton>一个按钮</gButton>
+```
+
+|   指令名称    |                     可选值                      |                             特性                             |
+| :-----------: | :---------------------------------------------: | :----------------------------------------------------------: |
+|     Icon      | loading/setting/download/arrow-left/arrow-right |                           控制图标                           |
+| Icon-position |                   left/right                    | 控制图标在按钮左方或者右方显示，默认值为left，只有icon传入值之后才出现效果 |
+|  openLoading  |                   true/false                    | 开启后点击图标会变为动态Loading的状态，默认值为false，只有icon传入值后才会出现效果 |
+
+##### 	
+
+##### 	按钮组
+
+<img src="https://s3.bmp.ovh/imgs/2022/07/08/5c3a23848ccdfaba.png" style="zoom:50%;" />
+
+```html
+ <gButtonGroup>
+      <gButton icon="arrow-left">一个按钮</gButton>
+      <gButton icon="arrow-right" icon-position="right">一个按钮</gButton>
+ </gButtonGroup>
+```
+
+开启后两个按钮会进行并排排列，注意只能传入gButton,不能传入其他DOM
+
+
+
+
+
+#### 2.输入框
+
+##### 	
+
+##### 	输入框
+
+<img src="https://s3.bmp.ovh/imgs/2022/07/08/e1aecb36c91b1a9b.png" style="zoom:50%;" />
+
+```html
+<gInput placeholder="请输入内容"></gInput>
+<gInput placeholder="请输入内容"  icon="setting" size="small"></gInput>
+<gInput placeholder="请输入内容"  icon="setting"></gInput>
+<gInput placeholder="请输入内容"  icon="setting" size="large"></gInput>
+<gInput value="Filmgram-UI"     icon="setting" size="large"></gInput>
+<gInput placeholder="请输入内容"  icon="setting" size="large" disabled="true"></gInput>
+```
+
+|  指令名称   |                          可选值                           |  默认值  |                      特性                       |
+| :---------: | :-------------------------------------------------------: | :------: | :---------------------------------------------: |
+|    Icon     | `loading`/`setting`/`download`/`arrow-left`/`arrow-right` |    -     |         不填写值时默认无图标，控制图标          |
+| placeholder |                          String                           |    -     |                 输入框占位文本                  |
+|    Size     |                 `normal`/`small`/`large`                  | `normal` | 控制输入框的大小，可以在配置css中进行自定义更改 |
+|  disabled   |                          Boolean                          | `false`  |              控制输入框是否被禁用               |
+|    Value    |                          String                           |    -     |                控制输入框的内容                 |
+
+##### 
+
+| 事件函数 |                  特性                  |         回调参数         |
+| :------: | :------------------------------------: | :----------------------: |
+| g-input  |        在Input值发生改变时触发         | (String \| event: Event) |
+| g-change | 在输入框失去焦点或者用户按下回车时触发 | (String \| event: Event) |
+| g-focus  |         在Input获得焦点时触发          |      (event: Event)      |
+|  g-blur  |         在Input失去焦点时触发          |      (event: Event)      |
+
+##### 
+
+##### 	按钮组
+
+<img src="/Users/mrs.huang/Desktop/截屏2022-06-10 下午3.56.37.png" style="zoom:50%;" />
+
+```html
+ <gButtonGroup>
+      <gButton icon="arrow-left">一个按钮</gButton>
+      <gButton icon="arrow-right" icon-position="right">一个按钮</gButton>
+ </gButtonGroup>
+```
+
+开启后两个按钮会进行并排排列，注意只能传入gButton,不能传入其他DOM
