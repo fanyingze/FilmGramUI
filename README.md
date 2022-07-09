@@ -111,8 +111,6 @@ import 'filmgram-ui/dist/style.css'
 |  disabled   |                          Boolean                          | `false`  |              控制输入框是否被禁用               |
 |    Value    |                          String                           |    -     |                控制输入框的内容                 |
 
-##### 
-
 | 事件函数 |                  特性                  |         回调参数         |
 | :------: | :------------------------------------: | :----------------------: |
 | g-input  |        在Input值发生改变时触发         | (String \| event: Event) |
@@ -120,17 +118,57 @@ import 'filmgram-ui/dist/style.css'
 | g-focus  |         在Input获得焦点时触发          |      (event: Event)      |
 |  g-blur  |         在Input失去焦点时触发          |      (event: Event)      |
 
-##### 
 
-##### 	按钮组
 
-<img src="/Users/mrs.huang/Desktop/截屏2022-06-10 下午3.56.37.png" style="zoom:50%;" />
+
+
+#### 3.布局
+
+![](https://s3.bmp.ovh/imgs/2022/07/09/7028006569368d40.png)
 
 ```html
- <gButtonGroup>
-      <gButton icon="arrow-left">一个按钮</gButton>
-      <gButton icon="arrow-right" icon-position="right">一个按钮</gButton>
- </gButtonGroup>
+  <h2>布局</h2>
+    <g-row >
+      <g-col :span="24"></g-col>
+    </g-row>
+    <g-row >
+      <g-col :span="12" ></g-col>
+      <g-col :span="12" ></g-col>
+    </g-row>
+    <g-row >
+      <g-col :span="4" ></g-col>
+      <g-col :span="4" ></g-col>
+      <g-col :span="4" ></g-col>
+      <g-col :span="4" ></g-col>
+      <g-col :span="4" ></g-col>
+      <g-col :span="4" ></g-col>
+    </g-row>
+    <h2>带间隙的布局</h2>
+    <g-row :gutter="20">
+      <g-col :span="12" ></g-col>
+      <g-col :span="12" ></g-col>
+    </g-row>
+    <g-row :gutter="20">
+      <g-col :span="6" ></g-col>
+      <g-col :span="6" ></g-col>
+      <g-col :span="6" ></g-col>
+      <g-col :span="6" ></g-col>
+    </g-row>
+    
+    <h2>缩进的布局</h2>
+    <g-row >
+      <g-col :span="12" ></g-col>
+      <g-col :span="11" :offSet="1"></g-col>
+    </g-row>
+    <g-row >
+      <g-col :span="8" ></g-col>
+      <g-col :span="6" :offSet="2"></g-col>
+      <g-col :span="8" ></g-col>
+    </g-row>
 ```
 
-开启后两个按钮会进行并排排列，注意只能传入gButton,不能传入其他DOM
+| 指令名称 |      UI对象       | 可选值 | 默认值 |        特性        |
+| :------: | :---------------: | :----: | :----: | :----------------: |
+|  gutter  | `<g-row></g-row>` | Number |   0    |      栅格间隔      |
+|   span   | `<g-col></g-col>` | Number |   24   |   栅格占据的列数   |
+|  offSet  | `<g-col></g-col>` | Number |   0    | 栅格左侧的间隔格数 |

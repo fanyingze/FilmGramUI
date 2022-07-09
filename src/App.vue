@@ -28,7 +28,43 @@
 
   <div class="showdiv">
     <h2>布局</h2>
+    <g-row >
+      <g-col ><div class="black"></div></g-col>
+    </g-row>
+    <g-row >
+      <g-col :span="12" ></g-col>
+      <g-col :span="12" ></g-col>
+    </g-row>
+    <g-row >
+      <g-col :span="4" ></g-col>
+      <g-col :span="4" ></g-col>
+      <g-col :span="4" ></g-col>
+      <g-col :span="4" ></g-col>
+      <g-col :span="4" ></g-col>
+      <g-col :span="4" ></g-col>
+    </g-row>
+    <h2>带间隙的布局</h2>
+    <g-row :gutter="20">
+      <g-col :span="12" ></g-col>
+      <g-col :span="12" ></g-col>
+    </g-row>
+    <g-row :gutter="20">
+      <g-col :span="6" ></g-col>
+      <g-col :span="6" ></g-col>
+      <g-col :span="6" ></g-col>
+      <g-col :span="6" ></g-col>
+    </g-row>
     
+    <h2>缩进的布局</h2>
+    <g-row >
+      <g-col :span="12" ></g-col>
+      <g-col :span="11" :offSet="1"></g-col>
+    </g-row>
+    <g-row >
+      <g-col :span="8" ></g-col>
+      <g-col :span="6" :offSet="2"></g-col>
+      <g-col :span="8" ></g-col>
+    </g-row>
   </div>
 
 </template>
@@ -38,6 +74,8 @@ import { onMounted, provide, reactive, ref, toRaw, toRefs, watch } from "vue"
 import gButtonGroup from "./components/Button/ButtonGroup.vue"
 import gButton from 'components/Button/Button.vue'
 import gInput from 'components/Input/Input.vue'
+import gRow from 'components/Layout/Row.vue'
+import gCol from 'components/Layout/Col.vue'
 
 
 
@@ -47,6 +85,8 @@ export default {
     gButton,
     gButtonGroup,
     gInput,
+    gRow,
+    gCol
   
 
   },
@@ -92,5 +132,23 @@ export default {
 
 .atinput {
   margin-left: 30px;
+}
+.red{
+  background-color: #d3dce6;
+  border-radius: 5px;
+  width: 100%;
+  height: 30px;
+}
+.blue{
+  background-color: #e5e9f2;
+  border-radius: 5px;
+  width: 100%;
+  height: 30px;
+}
+.black{
+  background-color: #99a9bf;
+  border-radius: 5px;
+  width: 100%;
+  height: 30px;
 }
 </style>
