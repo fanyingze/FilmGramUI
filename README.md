@@ -55,6 +55,8 @@ import 'filmgram-ui/dist/style.css'
 
 <img src="https://s3.bmp.ovh/imgs/2022/07/08/ae423753497c5d42.png" style="zoom:50%;" />
 
+<img src="https://s3.bmp.ovh/imgs/2022/07/11/7f8319b72e3b39c6.png" style="zoom:50%;" />
+
 ```html
 <gButton icon="setting" icon-position="left" openLoading='true'>一个按钮</gButton>
 <gButton icon="setting" icon-position="right" openLoading='true'>一个按钮</gButton>
@@ -66,6 +68,7 @@ import 'filmgram-ui/dist/style.css'
 |     Icon      | loading/setting/download/arrow-left/arrow-right |                           控制图标                           |
 | Icon-position |                   left/right                    | 控制图标在按钮左方或者右方显示，默认值为left，只有icon传入值之后才出现效果 |
 |  openLoading  |                   true/false                    | 开启后点击图标会变为动态Loading的状态，默认值为false，只有icon传入值后才会出现效果 |
+|     color     |               `blue` `red` `blue`               |             控制图标的颜色样式，不传值为默认样式             |
 
 ##### 	
 
@@ -172,3 +175,42 @@ import 'filmgram-ui/dist/style.css'
 |  gutter  | `<g-row></g-row>` | Number |   0    |      栅格间隔      |
 |   span   | `<g-col></g-col>` | Number |   24   |   栅格占据的列数   |
 |  offSet  | `<g-col></g-col>` | Number |   0    | 栅格左侧的间隔格数 |
+
+
+
+#### 4.对话框
+
+<img src="https://s3.bmp.ovh/imgs/2022/07/11/82a3b31d31041120.png" style="zoom:50%;" />
+
+<img src="https://s3.bmp.ovh/imgs/2022/07/11/97c1a97521c034bf.png" style="zoom:50%;" />
+
+
+
+##### 使用
+
+```javascript
+import MessageBox from 'plugin/MessageBox/index'
+// 导入当前对话框
+
+MessageBox.success({
+ 		  title:'我是带取消按钮的对话框',
+      content:'我是带取消按钮的对话框内容',
+      confirmButtonText:'好的',
+      callback:()=>{},
+      cancelButtonText:'取消',
+      cancelCallBack:()=>{}
+})  //成功通知
+
+MessageBox.normal({}) //正常通知
+MessageBox.warn({}) //警告通知
+```
+
+|     选项参数      | 默认值 |                             说明                             |
+| :---------------: | :----: | :----------------------------------------------------------: |
+|     通知类型      |   -    | MessageBox.normal  正常通知<br />MessageBox.success 成功通知 <br />MessageBox.warn 警告通知 |
+|       title       |   -    |                           通知标题                           |
+|      content      |   -    |                           通知内容                           |
+| confirmButtonText |  确定  |                         确定按钮内容                         |
+|     callback      |   -    |                确定按钮按下后，触发的回调函数                |
+| cancelButtonText  |   -    |             取消按钮内容，不传值时取消按钮不显示             |
+|  cancelCallBack   |   -    |                取消按钮按下后，触发的回调函数                |

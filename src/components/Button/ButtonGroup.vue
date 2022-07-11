@@ -16,8 +16,8 @@ export default {
     onMounted(()=>{
       const item:any = slot.value!.children
       for(let node of item){
-        if(node.nodeName !== 'BUTTON'){
-          console.warn(`g-button-group的子元素应该全是g-button，不能出现${node.nodeName}`)
+        if(node.nodeName !== 'BUTTON' && node.nodeName !== 'DIV'){
+          console.warn(`g-button-group的子元素应该全是g-button或者div，不能出现${node.nodeName}`)
         }
       }
     })

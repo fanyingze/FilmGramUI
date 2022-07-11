@@ -25,7 +25,10 @@
   --input-height:32px;
   --input-small-height:26px;
   --input-large-height:40px;
-  --input-disabled-background:#EEE
+  --input-disabled-background:#EEE;
+  /* message高亮 */
+  --message-hover-color:#1989fa;
+  --message-content-color:#666;
 }
 
 #app {

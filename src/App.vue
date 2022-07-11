@@ -1,11 +1,17 @@
 
 
 <template>
+  
+  <!-- <g-toast></g-toast> -->
+
   <div class="showdiv">
     <h2>按钮</h2>
-    <gButton icon="setting" icon-position="left" :openLoading='true'>一个按钮</gButton>
-    <gButton icon="setting" icon-position="right" :openLoading='true'>一个按钮</gButton>
-    <gButton>一个按钮</gButton>
+    <gButton icon="setting" icon-position="left" :openLoading='true' color="blue">一个按钮</gButton>
+    <gButton icon="setting" icon-position="left" :openLoading='true' color="red">一个按钮</gButton>
+    <gButton icon="setting" icon-position="left" :openLoading='true' color="green">一个按钮</gButton>
+    <gButton icon="setting" icon-position="left" :openLoading='true' >一个按钮</gButton>
+    <!-- <gButton icon="setting" icon-position="right" :openLoading='true' >一个按钮</gButton> -->
+    <!-- <gButton color="green">一个按钮</gButton> -->
   </div>
   <div class="showdiv">
     <h2>按钮组</h2>
@@ -14,7 +20,7 @@
       <gButton icon="arrow-right" icon-position="right">一个按钮</gButton>
     </gButtonGroup>
   </div>
-  <div class="showdiv">
+  <!-- <div class="showdiv">
     <h2>输入框</h2>
     <gInput placeholder="请输入内容"></gInput>
     <gInput placeholder="请输入内容" type="textarea"></gInput>
@@ -24,48 +30,10 @@
     <gInput value="Filmgram-UI" icon="setting" size="large"></gInput>
     <gInput placeholder="请输入内容" icon="setting" size="large" :disabled="true"></gInput>
 
-  </div>
+  </div> -->
 
-  <div class="showdiv">
-    <h2>布局</h2>
-    <g-row >
-      <g-col ><div class="black"></div></g-col>
-    </g-row>
-    <g-row >
-      <g-col :span="12" ></g-col>
-      <g-col :span="12" ></g-col>
-    </g-row>
-    <g-row >
-      <g-col :span="4" ></g-col>
-      <g-col :span="4" ></g-col>
-      <g-col :span="4" ></g-col>
-      <g-col :span="4" ></g-col>
-      <g-col :span="4" ></g-col>
-      <g-col :span="4" ></g-col>
-    </g-row>
-    <h2>带间隙的布局</h2>
-    <g-row :gutter="20">
-      <g-col :span="12" ></g-col>
-      <g-col :span="12" ></g-col>
-    </g-row>
-    <g-row :gutter="20">
-      <g-col :span="6" ></g-col>
-      <g-col :span="6" ></g-col>
-      <g-col :span="6" ></g-col>
-      <g-col :span="6" ></g-col>
-    </g-row>
-    
-    <h2>缩进的布局</h2>
-    <g-row >
-      <g-col :span="12" ></g-col>
-      <g-col :span="11" :offSet="1"></g-col>
-    </g-row>
-    <g-row >
-      <g-col :span="8" ></g-col>
-      <g-col :span="6" :offSet="2"></g-col>
-      <g-col :span="8" ></g-col>
-    </g-row>
-  </div>
+  <a href="javascript:;" @click="test">打开消息盒子</a>
+  <a href="javascript:;" @click="test2">打开消息盒子2</a>
 
 </template>
 
@@ -78,6 +46,9 @@ import gRow from 'components/Layout/Row.vue'
 import gCol from 'components/Layout/Col.vue'
 
 
+import MessageBox from 'plugin/MessageBox/index'
+
+
 
 export default {
   name: 'App',
@@ -86,16 +57,35 @@ export default {
     gButtonGroup,
     gInput,
     gRow,
-    gCol
+    gCol,
+    
   
 
   },
   setup() {
-
-
-
+    const output = () =>{
+      console.log(ref)
+    }
+    const test = () =>{
+      MessageBox.success({
+      title:'我是带取消按钮的对话框',
+      content:'我是带取消按钮的对话框内容',
+      confirmButtonText:'好的',
+      callback:output,
+      cancelButtonText:'取消',
+      cancelCallBack:()=>{}
+    })
+    }
+    const test2 = () =>{
+      MessageBox.warn({
+      title:'我是一个对话框',
+      content:'我是对话框的内容',
+      confirmButtonText:'确定',
+    })
+    }
     return {
-
+      test,
+      test2
 
     }
   }
@@ -151,4 +141,5 @@ export default {
   width: 100%;
   height: 30px;
 }
+
 </style>

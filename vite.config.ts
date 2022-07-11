@@ -9,7 +9,8 @@ export default defineConfig({
     alias:{
       '@':'/src/',
       'assets':'/src/assets',
-      'components':'/src/components'
+      'components':'/src/components',
+      'plugin':'/src/plugin'
     }
   },
   plugins: [vue()],
